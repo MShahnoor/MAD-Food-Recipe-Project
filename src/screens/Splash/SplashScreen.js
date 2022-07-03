@@ -4,8 +4,11 @@ import styles from "./styles";
 
 export default function SplashScreen() {
   return (
-    <View style={styles.container}>
-      <Image style={styles.photo} source={require("../../../assets/icons/cookie100.png")} />
-    </View>
+		<View style={styles.container}>
+			<Image
+				style={styles.photo}
+				source={require("../../../assets/splash.png")}
+			/>
+		</View>
   );
 }

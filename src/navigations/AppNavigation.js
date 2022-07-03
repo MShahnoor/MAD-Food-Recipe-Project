@@ -71,11 +71,6 @@ function DrawerStack() {
 		<Drawer.Navigator
 			drawerPosition="left"
 			initialRouteName="Main"
-			drawerStyle={
-				{
-					// width: "40%",
-				}
-			}
 			screenOptions={{ headerShown: false }}
 			drawerContent={({ navigation }) => (
 				<DrawerContainer
@@ -95,7 +90,6 @@ export default function AppContainer() {
 	return (
 		<View style={{ flex: 1 }}>
 			<StatusBar
-				animated={true}
 				backgroundColor="#313131"
 				barStyle="light-content"
 			/>
