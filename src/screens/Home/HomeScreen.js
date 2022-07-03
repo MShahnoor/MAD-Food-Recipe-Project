@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { FlatList, Text, View, TouchableHighlight, Image } from "react-native";
+import { FlatList, Text, View, TouchableHighlight, Image, ImageBackground } from "react-native";
 import styles from "./styles";
 import { recipes } from "../../data/dataArrays";
 import MenuImage from "../../components/MenuImage/MenuImage";
@@ -10,6 +10,13 @@ export default function HomeScreen(props) {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
+			headerTitleStyle: {
+				fontWeight: "700",
+				textAlign: "center",
+				alignSelf: "center",
+				color: "#ffffff",
+				fontFamily: "Roboto",
+			},
 			headerLeft: () => (
 				<MenuImage
 					onPress={() => {
@@ -27,39 +34,42 @@ export default function HomeScreen(props) {
 
 	const renderRecipes = ({ item }) => (
 		<TouchableHighlight
-			underlayColor="rgba(73,182,77,0.9)"
+			underlayColor="#3A3A3A"
 			onPress={() => onPressRecipe(item)}
 		>
 			<View style={styles.container}>
-				<Image
+				<ImageBackground
 					style={styles.photo}
 					source={{
 						uri: item.photo_url,
 					}}
-				/>
-				<Text style={styles.title}>
-					{item.title}
-				</Text>
-				<Text style={styles.category}>
-					{getCategoryName(
-						item.categoryId
-					)}
-				</Text>
+					resizeMode="cover"
+				>
+				<View style={
+							styles.gradientPhoto
+						}>
+					<View>
+						<Text style={styles.title}>
+							{item.title}
+						</Text>
+					</View>
+				</View>	
+				</ImageBackground>
 			</View>
 		</TouchableHighlight>
 	);
 
 	return (
-		<View>
+		<View
+			style={{
+				backgroundColor: "#313131",
+				flex: 1,
+			}}
+		>
 			<FlatList
-				vertical
-				showsVerticalScrollIndicator={false}
-				numColumns={2}
 				data={recipes}
 				renderItem={renderRecipes}
-				keyExtractor={item =>
-					`${item.recipeId}`
-				}
+				keyExtractor={item => `${item.recipeId}`}
 			/>
 		</View>
 	);
