@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		marginLeft: 10,
 		marginTop: 2,
-		// color: "red",
+		color: "#ffffff",
 	},
 });
 

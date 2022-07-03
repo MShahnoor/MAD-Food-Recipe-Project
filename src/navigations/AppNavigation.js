@@ -11,7 +11,7 @@ import DrawerContainer from "../screens/DrawerContainer/DrawerContainer";
 import IngredientScreen from "../screens/Ingredient/IngredientScreen";
 import SearchScreen from "../screens/Search/SearchScreen";
 import IngredientsDetailsScreen from "../screens/IngredientsDetails/IngredientsDetailsScreen";
-import styles from "../screens/Home/styles";
+
 
 const Stack = createStackNavigator();
 
@@ -25,7 +25,6 @@ function MainNavigator() {
 					alignSelf: "center",
 					flex: 1,
 					color: "#ffffff",
-					// fontFamily: "Georgia",
 				},
 				headerStyle: {
 					backgroundColor: "#313131",
@@ -72,9 +71,11 @@ function DrawerStack() {
 		<Drawer.Navigator
 			drawerPosition="left"
 			initialRouteName="Main"
-			drawerStyle={{
-				width: 250,
-			}}
+			drawerStyle={
+				{
+					// width: "40%",
+				}
+			}
 			screenOptions={{ headerShown: false }}
 			drawerContent={({ navigation }) => (
 				<DrawerContainer
