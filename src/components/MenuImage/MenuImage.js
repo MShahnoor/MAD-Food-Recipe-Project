@@ -11,6 +11,7 @@ export default function MenuImage(props) {
   );
 }
 
+
 MenuImage.propTypes = {
   onPress: PropTypes.func,
 };
