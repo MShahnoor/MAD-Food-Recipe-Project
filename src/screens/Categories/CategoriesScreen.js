@@ -18,10 +18,11 @@ export default function CategoriesScreen(props) {
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerTitleStyle: {
-				fontWeight: "500",
+				fontWeight: "700",
 				textAlign: "center",
 				alignSelf: "center",
 				color: "#ffffff",
+				fontFamily: "Roboto",
 			},
 			headerLeft: () => (
 				<MenuImage

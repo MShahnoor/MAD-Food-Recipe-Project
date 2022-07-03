@@ -1,38 +1,88 @@
 import React, { useLayoutEffect } from "react";
-import { FlatList, Text, View, TouchableHighlight, Image } from "react-native";
+import {
+	FlatList,
+	Text,
+	View,
+	TouchableHighlight,
+	ImageBackground,
+} from "react-native";
 import styles from "./styles";
 import { getRecipes, getCategoryName } from "../../data/MockDataAPI";
 
 export default function RecipesListScreen(props) {
-  const { navigation, route } = props;
+	const { navigation, route } = props;
 
-  const item = route?.params?.category;
-  const recipesArray = getRecipes(item.id);
+	const item = route?.params?.category;
+	const recipesArray = getRecipes(item.id);
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: route.params?.title,
-      headerRight: () => <View />,
-    });
-  }, []);
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			title: route.params?.title,
+			headerRight: () => <View />,
+			headerTitleStyle: {
+				fontWeight: "500",
+				textAlign: "center",
+				alignSelf: "center",
+				color: "#ffffff",
+			},
+		});
+	}, []);
 
-  const onPressRecipe = (item) => {
-    navigation.navigate("Recipe", { item });
-  };
+	const onPressRecipe = item => {
+		navigation.navigate("Recipe", { item });
+	};
 
-  const renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor="rgba(73,182,77,0.9)" onPress={() => onPressRecipe(item)}>
-      <View style={styles.container}>
-        <Image style={styles.photo} source={{ uri: item.photo_url }} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{getCategoryName(item.categoryId)}</Text>
-      </View>
-    </TouchableHighlight>
-  );
+	const renderRecipes = ({ item }) => (
+		<TouchableHighlight
+			underlayColor="rgba(73,182,77,0.9)"
+			onPress={() => onPressRecipe(item)}
+		>
+			<View style={styles.categoriesItemContainer}>
+				<ImageBackground
+					style={styles.categoriesPhoto}
+					source={{
+						uri: item.photo_url,
+					}}
+					resizeMode="cover"
+				>
+					<View
+						style={
+							styles.gradientPhoto
+						}
+					>
+						<View
+							style={
+								styles.titleContainer
+							}
+						>
+							<Text
+								style={
+									styles.title
+								}
+							>
+								{
+									item.title
+								}
+							</Text>
+						</View>
+					</View>
+				</ImageBackground>
+			</View>
+		</TouchableHighlight>
+	);
 
-  return (
-    <View>
-      <FlatList vertical showsVerticalScrollIndicator={false} numColumns={2} data={recipesArray} renderItem={renderRecipes} keyExtractor={(item) => `${item.recipeId}`} />
-    </View>
-  );
+	return (
+		<View style={{ backgroundColor: "#313131", flex: 1 }}>
+			<FlatList
+				vertical
+				showsVerticalScrollIndicator={false}
+				numColumns={1}
+				data={recipesArray}
+				renderItem={renderRecipes}
+				keyExtractor={item =>
+					`${item.recipeId}`
+				}
+			/>
+		</View>
+	);
 }

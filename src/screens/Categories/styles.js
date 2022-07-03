@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	gradientPhoto: {
-		backgroundColor: "rgba(10,10,10,0.3)",
+		backgroundColor: "rgba(0,0,0,0.4)",
 		height: "100%",
 		width: "100%",
 		justifyContent: "center",
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: "#ffffff",
 		letterSpacing: 2,
+		fontFamily: "Roboto",
 	},
 });
 

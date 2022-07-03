@@ -25,10 +25,12 @@ function MainNavigator() {
 					alignSelf: "center",
 					flex: 1,
 					color: "#ffffff",
+					// fontFamily: "Georgia",
 				},
 				headerStyle: {
 					backgroundColor: "#313131",
 				},
+				headerTintColor: "#ffffff",
 			}}
 		>
 			<Stack.Screen
