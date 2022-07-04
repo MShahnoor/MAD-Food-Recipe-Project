@@ -1,12 +1,35 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect , useEffect, useState} from "react";
 import { FlatList, Text, View, TouchableHighlight, Image, ImageBackground } from "react-native";
 import styles from "./styles";
-import { recipes } from "../../data/dataArrays";
+//import { recipes } from "../../data/dataArrays";
 import MenuImage from "../../components/MenuImage/MenuImage";
 import { getCategoryName } from "../../data/MockDataAPI";
 
 export default function HomeScreen(props) {
 	const { navigation } = props;
+	const [recipes, setRecipes] = useState([]);
+
+	useEffect(() => {
+	  fetchData();
+	  
+	
+	
+	},[]);
+	
+	let fetchData = async () => {
+	try {
+	  
+	
+	let fetchedData2 = await fetch(	"https://retoolapi.dev/GwgoSx/recipes");
+	let dataRecipies = await fetchedData2.json();
+  
+	setRecipes (eval(dataRecipies[0].recipes));
+  
+	  
+	
+	  
+	} catch (error) {console.log(error)}
+	};
 
 	useLayoutEffect(() => {
 		navigation.setOptions({

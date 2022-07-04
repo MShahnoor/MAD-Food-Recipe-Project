@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import  React, { useLayoutEffect, useRef, useState } from "react";
 import { ScrollView, Text, View, Image, Dimensions, TouchableHighlight } from "react-native";
-import styles from "./styles";
+import styles from './styles.js';
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { getIngredientName, getCategoryName, getCategoryById } from "../../data/MockDataAPI";
 import BackButton from "../../components/BackButton/BackButton";
@@ -80,8 +80,12 @@ export default function RecipeScreen(props) {
           />
         </View>
       </View>
+
       <View style={styles.infoRecipeContainer}>
         <Text style={styles.infoRecipeName}>{item.title}</Text>
+
+        
+
         <View style={styles.infoContainer}>
           <TouchableHighlight onPress={() => navigation.navigate("RecipesList", { category, title })}>
             <Text style={styles.category}>{getCategoryName(item.categoryId).toUpperCase()}</Text>
@@ -92,6 +96,9 @@ export default function RecipeScreen(props) {
           <Image style={styles.infoPhoto} source={require("../../../assets/icons/time.png")} />
           <Text style={styles.infoRecipe}>{item.time} minutes </Text>
         </View>
+        
+    
+        
 
         <View style={styles.infoContainer}>
           <ViewIngredientsButton
@@ -102,9 +109,11 @@ export default function RecipeScreen(props) {
             }}
           />
         </View>
-        <View style={styles.infoContainer}>
+
+        <View style={[styles.infoContainer, {backgroundColor:"#424242", marginTop:10, borderRadius: 10}]}>
           <Text style={styles.infoDescriptionRecipe}>{item.description}</Text>
         </View>
+
       </View>
     </ScrollView>
   );

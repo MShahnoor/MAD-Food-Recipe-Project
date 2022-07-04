@@ -1,4 +1,5 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
+import { useEffect } from "react";
 import {
 	FlatList,
 	Text,
@@ -8,12 +9,35 @@ import {
 	ImageBackground,
 } from "react-native";
 import styles from "./styles";
-import { categories } from "../../data/dataArrays";
+
 import { getNumberOfRecipes } from "../../data/MockDataAPI";
 import MenuImage from "../../components/MenuImage/MenuImage";
 
 export default function CategoriesScreen(props) {
 	const { navigation } = props;
+	const [categories, setCategories] = useState([]);
+
+	
+  useEffect(() => {
+    fetchData();
+  
+  
+  },[]);
+  
+  let fetchData = async () => {
+  try {
+    let fetchedData1 = await fetch(	"https://retoolapi.dev/RRkmBz/categories");
+  let dataCategories = await fetchedData1.json();
+
+  let cat = [1,2];
+   setCategories(eval( dataCategories[0].categories))
+   console.log( "from fetched data: " + dataCategories[0].categories)
+   console.log( "from fetched datax: " + typeof(dataCategories))
+  
+  
+    
+    } catch (error) {console.log(error)}
+  };
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
