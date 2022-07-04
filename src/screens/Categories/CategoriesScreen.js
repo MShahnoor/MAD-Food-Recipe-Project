@@ -31,8 +31,6 @@ export default function CategoriesScreen(props) {
 
   let cat = [1,2];
    setCategories(eval( dataCategories[0].categories))
-   console.log( "from fetched data: " + dataCategories[0].categories)
-   console.log( "from fetched datax: " + typeof(dataCategories))
   
   
     
