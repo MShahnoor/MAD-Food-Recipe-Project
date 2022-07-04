@@ -9,37 +9,37 @@ const RECIPE_ITEM_MARGIN = 20;
 
 
 const styles = StyleSheet.create({
-  mainContainer:{
-    backgroundColor: "#313131",
-				flex: 1,
-  },
-  
-  titleIngredient: {
-    fontWeight: 'bold',
-    fontSize: 20
-  },
-  photoIngredient: {
-    width: '100%',
-    height: 250,
-    alignSelf: 'center'
-  },
-  ingredientInfo: {
-    margin: 10,
-    fontSize: 19,
-    textAlign: 'left',
-    fontWeight: 'bold',
+	mainContainer: {
+		backgroundColor: "#313131",
+		flex: 1,
+	},
+
+	titleIngredient: {
+		fontWeight: "bold",
+		fontSize: 20,
+	},
+	photoIngredient: {
+		width: "100%",
+		height: 250,
+		alignSelf: "center",
+	},
+	ingredientInfo: {
+		margin: 10,
+		fontSize: 19,
+		textAlign: "left",
+		fontWeight: "bold",
 		color: "#ffffff",
 		letterSpacing: 2,
 		fontFamily: "Roboto",
-  },
-  gradientPhoto: {
+	},
+	gradientPhoto: {
 		backgroundColor: "rgba(0,0,0,0.4)",
 		height: "100%",
 		width: "100%",
 		justifyContent: "center",
 		alignItems: "center",
 	},
-  container: {
+	container: {
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
@@ -56,7 +56,17 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: "#313131",
 		overflow: "hidden",
-    backgroundColor:"#424242",
+		backgroundColor: "#424242",
+
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 2,
+			height: 1,
+		},
+		shadowOpacity: 0.2,
+		shadowRadius: 3.84,
+
+		elevation: 4,
 	},
 	photo: {
 		width:
@@ -79,10 +89,10 @@ const styles = StyleSheet.create({
 		marginLeft: 5,
 	},
 	category: {
-    fontSize:12,
+		fontSize: 12,
 		marginTop: 5,
 		marginBottom: 5,
-    color: "#a0a0a0",
+		color: "#a0a0a0",
 		letterSpacing: 2,
 		fontFamily: "Roboto",
 	},

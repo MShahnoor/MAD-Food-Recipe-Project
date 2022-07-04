@@ -23,6 +23,16 @@ const styles = StyleSheet.create({
 		height: RECIPE_ITEM_HEIGHT + 50,
 		backgroundColor: "#424242",
 		borderRadius: 10,
+
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 3,
+		},
+		shadowOpacity: 0.29,
+		shadowRadius: 4.65,
+
+		elevation: 7,
 	},
 	title: {
 		margin: 5,
@@ -37,7 +47,7 @@ const styles = StyleSheet.create({
 		width:
 			(SCREEN_WIDTH - RECIPE_ITEM_MARGIN) / numColumns -
 			RECIPE_ITEM_OFFSET -
-			3,
+			4,
 		height: RECIPE_ITEM_HEIGHT - 10,
 		overflow: "hidden",
 		borderTopLeftRadius: 10,

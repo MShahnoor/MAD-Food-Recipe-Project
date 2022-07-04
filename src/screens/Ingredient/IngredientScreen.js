@@ -42,23 +42,53 @@ export default function IngredientScreen(props) {
   );
 
   return (
-    <ScrollView style={styles.mainContainer}>
-      <View style={{ borderBottomWidth: 0.4, marginBottom: 10, borderBottomColor: "grey" }}>
-        <ImageBackground style={styles.photoIngredient} source={{ uri: "" + ingredientUrl }} 
-        >
-          <View style={styles.gradientPhoto}></View>
-          </ImageBackground>
-      </View>
-      <Text style={styles.ingredientInfo}>Recipes with{ingredientName}:</Text>
-      <View style={{
-				backgroundColor: "#313131",
-				flex: 1,
-			}}>
-        <FlatList vertical showsVerticalScrollIndicator={false} 
-        numColumns={2} 
-        data={getRecipesByIngredient(ingredientId)} 
-        renderItem={renderRecipes} keyExtractor={(item) => `${item.recipeId}`} />
-      </View>
-    </ScrollView>
+		<ScrollView style={styles.mainContainer}>
+			<View
+				style={{
+					borderBottomWidth: 0.4,
+					marginBottom: 10,
+					borderBottomColor: "grey",
+				}}
+			>
+				<ImageBackground
+					style={styles.photoIngredient}
+					source={{
+						uri:
+							"" +
+							ingredientUrl,
+					}}
+				>
+					<View
+						style={
+							styles.gradientPhoto
+						}
+					></View>
+				</ImageBackground>
+			</View>
+			<Text style={styles.ingredientInfo}>
+				Recipes with {ingredientName}:
+			</Text>
+			<View
+				style={{
+					backgroundColor: "#313131",
+					flex: 1,
+				}}
+			>
+				<FlatList
+					vertical
+					showsVerticalScrollIndicator={
+						false
+					}
+					numColumns={2}
+					data={getRecipesByIngredient(
+						ingredientId
+					)}
+					renderItem={renderRecipes}
+					keyExtractor={item =>
+						`${item.recipeId}`
+					}
+				/>
+			</View>
+		</ScrollView>
   );
 }
