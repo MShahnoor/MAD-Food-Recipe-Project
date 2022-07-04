@@ -20,7 +20,7 @@ export default function HomeScreen(props) {
 	try {
 	  
 	
-	let fetchedData2 = await fetch(	"https://retoolapi.dev/GwgoSx/recipes");
+	let fetchedData2 = await fetch(	"https://retoolapi.dev/w5NQJa/recipes");
 	let dataRecipies = await fetchedData2.json();
   
 	setRecipes (eval(dataRecipies[0].recipes));

@@ -26,7 +26,7 @@ export default function CategoriesScreen(props) {
   
   let fetchData = async () => {
   try {
-    let fetchedData1 = await fetch(	"https://retoolapi.dev/RRkmBz/categories");
+    let fetchedData1 = await fetch(	"https://retoolapi.dev/8OKTye/categories");
   let dataCategories = await fetchedData1.json();
 
   let cat = [1,2];
