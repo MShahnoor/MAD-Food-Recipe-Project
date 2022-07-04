@@ -3,7 +3,7 @@ import { View, Image } from "react-native";
 import PropTypes from "prop-types";
 import styles from "./styles";
 import MenuButton from "../../components/MenuButton/MenuButton";
-import drawerImage from "../../../assets/drawerImage3.png";
+import drawerImage from "../../../assets/drawerImage.png";
 
 export default function DrawerContainer(props) {
 	const { navigation } = props;
