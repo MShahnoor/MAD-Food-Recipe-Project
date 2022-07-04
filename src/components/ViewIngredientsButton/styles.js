@@ -12,12 +12,13 @@ const styles = StyleSheet.create({
     borderColor: '#2cd18a',
     borderWidth: 1,
     justifyContent: 'center',
-    alignItems: 'center'
-    // backgroundColor: '#2cd18a'
+    alignItems: 'center',
+     backgroundColor: '#2cd18a'
   },
   text: {
-    fontSize: 14,
-    color: '#2cd18a'
+    fontSize: 16,
+    color: 'white',
+    fontWeight:"bold"
   }
 });
 

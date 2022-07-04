@@ -110,7 +110,8 @@ export default function RecipeScreen(props) {
           />
         </View>
 
-        <View style={[styles.infoContainer, {backgroundColor:"#424242", marginTop:10, borderRadius: 10}]}>
+        <View style={[styles.infoContainer, {backgroundColor:"#424242", marginTop:10, borderRadius: 10, }]}>
+        
           <Text style={styles.infoDescriptionRecipe}>{item.description}</Text>
         </View>
 
